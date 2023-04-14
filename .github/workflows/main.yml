@@ -22,9 +22,9 @@ jobs:
         run: docker login --username ${{ secrets.USERNAME}} --password ${{secrets.DOCKER_TOKEN}}
 
       - name: "building docker image"
-        run: docker build -t ${{ secrets.USERNAME}}/swimage .
+        run: docker build -t ${{ secrets.USERNAME}}/image2 .
 
       - name: "pushing to docker hub"
-        run: docker push ${{ secrets.USERNAME}}/swimage
+        run: docker push ${{ secrets.USERNAME}}/image2
 
 
