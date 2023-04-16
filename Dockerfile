@@ -1,8 +1,8 @@
-FROM nginx:alpine
-
+FROM node:14-alpine
 WORKDIR /app
-
+COPY package*.json ./
+RUN npm install
 COPY . .
-
-COPY ./nginx.conf /etc/nginx/nginx.conf
+EXPOSE 3000
+CMD ["npm", "start"]
 
